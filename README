@@ -1,0 +1,23 @@
+"Resumen de prensa"
+
+Desarrollar un programa en Django que analice que analice las páginas HTML se diferentes sitios de noticias, las almacene en la base de datos y mediante Django se visualizen los titulares y el enlace:
+
+- Para analizar las páginas web se programará un "script" con la intención de ejecutarlo desde el cron.
+
+- El "script" usará expresiones regulares para encontrar los titulares, opcionalmente el resumen o entradilla, y el enlace a la noticia original.
+
+- Se deben analizar al menos 3 sitios diferentes a elección (analizar cuáles os conviene). El url de cada uno, y las expresiones regulares que se usarán, se pueden alamacenar en un fichero o en la propia base de datos (usad siempre el modelo de datos de Django).
+
+- La visualización de las noticias se hará por web y con Django.
+
+- Deberá mostrar el título enlazando a la noticia, opcionalmente el resumen, deberá permitir la paginación para ver noticias anteriores.
+
+- Debe tener la opción de ver las noticias de un sólo sitio (por ejemplo listando los sitios que se muestran y un enlace para visualizar las noticias sólo de ese sitio).
+
+
+
+PRESENTACIÓN
+
+Se subirá a la "tarea" correspondiente un fichero PDF u OpenOffice con el código fuente de los programas, los resultados de texto, y capturas de pantallas.
+
+El trabajo puede ser presentado por hasta dos personas.
