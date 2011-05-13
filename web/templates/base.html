@@ -1,0 +1,14 @@
+<html>
+
+<head>
+    <title>{% block title %} titol base {% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    Contingut base
+        <h1>{% block h1 %} hola base {% endblock %}</h1>
+    {% endblock %}
+</body>
+
+</html>
