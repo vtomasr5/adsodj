@@ -1,7 +1,6 @@
 # Create your views here.
 
-from django.utils.translation import gettext as _
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import render_to_response
 from models import *
 
 from django.http import HttpResponse

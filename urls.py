@@ -18,5 +18,5 @@ urlpatterns = patterns('',
 
     # Web project
     (r'^base', web.views.base),
-    (r'^.*', web.views.index),
+    (r'^.*', web.views.index), # ha d'estar sa darrera!
 )
