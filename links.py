@@ -13,10 +13,18 @@ from web.models import Pagina, Noticia
 
 sites = ('http://www.genbetadev.com', 'http://www.xatakaciencia.com', 'http://www.vidaextra.com', 'http://www.blogdecine.com')
 
+# Escogemos sólo el nombre de la pagina
+sites_name = []
+for i in sites:
+    r = re.search(r'\.(.+?)\.', i)
+    s = r.groups()[0]
+    sites_name.append(s)
+
 # Guardamos en la BD las paginas
 for i in range(len(sites)):
     reg = Pagina()
     reg.urlbase = sites[i]
+    reg.nom = sites_name[i]
     try:
         reg.save()
     except django.db.utils.IntegrityError:
@@ -42,9 +50,6 @@ def getUrls(url):
                 urls.append(url+l)
                 t = p.groups()[1].strip()
                 titols.append(t)
-                #~ print "LINK:" + url + l
-                #~ print "TITLE:" + t + "\n"
-
     return urls, titols
 
 # Guardamos las noticias de las paginas en la BD
