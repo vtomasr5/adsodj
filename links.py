@@ -11,7 +11,7 @@ sys.path.append(os.path.abspath(directory))
 
 from web.models import Pagina, Noticia
 
-sites = ('http://www.genbetadev.com', 'http://www.xatakaciencia.com', 'http://www.vidaextra.com', 'http://www.blogdecine.com')
+sites = ('http://www.genbetadev.com', 'http://www.xatakaciencia.com', 'http://www.vidaextra.com', 'http://www.blogdecine.com', 'http://www.genbeta.com', 'http://www.motorpasionf1.com')
 
 # Escogemos sólo el nombre de la pagina
 sites_name = []
