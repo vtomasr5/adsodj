@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 
 import web.views
-
+from settings import MEDIA_ROOT
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -17,6 +17,10 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
     # Web project
-    (r'^base', web.views.base),
-    (r'^.*', web.views.index), # ha d'estar sa darrera!
+    (r'^(\d*)', web.views.select),
+)
+
+# Per als arxius estatics
+urlpatterns += patterns('django.views',
+    (r'^site_media/(.*)$', 'static.serve', {'document_root': MEDIA_ROOT}),
 )

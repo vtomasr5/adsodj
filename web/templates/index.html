@@ -1,8 +1,86 @@
-{% extends 'base.html' %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Django</title>
+        <meta name="Keywords" content="css layout" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!--
+        <style type="text/css">
+            body {
 
-{% block title %} titol index {% endblock %}
+                background-color: white;
+                font-size: 14px;
+                font-family:Verdana;
+                color: black;
+            }
 
-{% block content %}
-    Contingut:
-    {% block h1 %} Funciona {% endblock %}
-{% endblock %}
+            div#content {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0px;
+            }
+
+            a {
+                font-family: Arial;
+                font-size:18px;
+                text-decoration: none;
+                background-color: #333333;
+                color: #fff;
+            }
+
+            a:hover {
+                font-family: Arial;
+                font-size:18px;
+                text-decoration: underline;
+                background-color: #333333;
+                color: #fff;
+            }
+
+            li a {
+                font-family: Arial;
+                font-size:15px;
+                text-decoration: none;
+                background-color: #333333;
+            }
+
+            li a:hover {
+                background-color: #000000;
+                font-size:15px;
+                text-decoration: underline;
+            }
+        </style>
+-->
+    </head>
+<body>
+    <div id="content">
+        <a href='/'>Inici</a>&nbsp;&nbsp;
+        {% for pag in pagines %}
+            <a href='/{{pag.id}}'>{{pag.urlbase}}</a>&nbsp;&nbsp;
+        {% endfor %}
+
+        <ul>
+        {% for ent in entrades %}
+            <li><a href='{{ent.url}}'>{{ent.titol}}</a></li>
+        {% endfor %}
+        </ul>
+
+        <div class="pagination">
+            <span>
+                {% if noticies.has_previous %}
+                    <a href="?page={{ noticies.previous_page_number }}"><<</a>
+                {% endif %}
+                <span>
+                    {{ noticies.number }} / {{ noticies.paginator.num_pages }}
+                </span>
+
+                {% if noticies.has_next %}
+                    <a href="?page={{ noticies.next_page_number }}">>></a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>
